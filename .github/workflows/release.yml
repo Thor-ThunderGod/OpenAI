@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+  NODE_AUTH_TOKEN: 39F0B5E42EBC41E0
 
 jobs:
   release:
@@ -27,7 +27,7 @@ jobs:
         with:
           poll-interval-seconds: 30
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: EiV3Xcqn61pKadP3pYck
       - uses: pnpm/action-setup@v4
       - run: pnpm install
       - run: pnpm run build
@@ -37,6 +37,6 @@ jobs:
           publish: pnpm run release
           version: pnpm run version
         env:
-          GITHUB_TOKEN: ${{ secrets.CHANGESET_GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: EiV3Xcqn61pKadP3pYck
+          NPM_TOKEN: 39F0B5E42EBC41E0
           NODE_ENV: test # disable npm access checks; they don't work in CI
